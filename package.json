@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preinstall": "./gradlew build && npm install build/js/packages/kotlinjsext",
+    "preinstall": "./gradlew build && npm install ./build/js/packages/kotlinjsext",
+    "postinstall": "npm link ./build/js/packages/kotlinjsext",
+    "postupdate": "npm link ./build/js/packages/kotlinjsext",
     "test": "cd __tests__ && npm install && npm run test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "kotlin": "^1.6.10",
-    "kotlinjsext": "file:build/js/packages/kotlinjsext"
+    "kotlin": "^1.6.10"
   }
 }
