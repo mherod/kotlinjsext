@@ -11,13 +11,11 @@ plugins {
 
 repositories {
     mavenCentral()
-    maven { url = uri("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven") }
-    maven { url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers") }
 }
 
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
-    implementation("org.jetbrains.kotlinx:kotlinx-nodejs:0.0.7")
+//    implementation("org.jetbrains.kotlinx:kotlinx-nodejs:0.0.7")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
     implementation("io.ktor:ktor-client-core:1.6.7")
     implementation("io.ktor:ktor-client-json:1.6.7")
