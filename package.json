@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "./gradlew build && npm install ./build/js/packages/kotlinjsext --no-save",
-    "postinstall": "npm link ./build/js/packages/kotlinjsext",
-    "postupdate": "npm link ./build/js/packages/kotlinjsext",
     "test": "cd __tests__ && npm install && npm run test"
   },
   "keywords": [],
