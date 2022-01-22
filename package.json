@@ -12,6 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "kotlin": "^1.6.10",
-    "kotlinjsext": "file:build/js/packages/kotlinjsext"
+    "kotlinjsext-built": "file:build/js/packages/kotlinjsext"
   }
 }

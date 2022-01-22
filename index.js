@@ -10,7 +10,7 @@ if (kotlin === undefined) throw new Error("kotlin: Failed to init")
 
 let kotlinjsext;
 try {
-    kotlinjsext = require("kotlinjsext");
+    kotlinjsext = require("kotlinjsext-built");
 } catch (e) {
     console.error(e)
 }
