@@ -15,7 +15,6 @@ repositories {
 
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
-//    implementation("org.jetbrains.kotlinx:kotlinx-nodejs:0.0.7")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
     implementation("io.ktor:ktor-client-core:1.6.7")
     implementation("io.ktor:ktor-client-json:1.6.7")
@@ -31,6 +30,17 @@ kotlin {
         nodejs()
     }
 }
+
+val build = tasks.getByName("build")
+
+val copyBuildToRoot = task<Copy>("copyBuildToRoot") {
+    dependsOn(build)
+    from("$buildDir/js/packages/${rootProject.name}/kotlin/")
+    into("$projectDir")
+    include { it.file.isFile }
+}
+
+build.finalizedBy(copyBuildToRoot)
 
 tasks.withType<KotlinCompile>() {
     kotlinOptions { applyKotlinCompilerOptions() }

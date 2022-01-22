@@ -85,3 +85,6 @@ typings/
 /.idea/modules
 /.idea/modules.xml
 /build
+kotlinjsext.meta.js
+kotlinjsext.js.map
+kotlinjsext.js
