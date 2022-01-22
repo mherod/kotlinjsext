@@ -74,3 +74,14 @@ typings/
 
 # FuseBox cache
 .fusebox/
+/.gradle
+/.idea/artifacts
+/.idea/compiler.xml
+/.idea/gradle.xml
+/.idea/jarRepositories.xml
+/.idea/jsLibraryMappings.xml
+/.idea/kotlinjsext.iml
+/.idea/misc.xml
+/.idea/modules
+/.idea/modules.xml
+/build

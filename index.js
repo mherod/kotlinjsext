@@ -8,7 +8,16 @@ try {
 }
 if (kotlin === undefined) throw new Error("kotlin: Failed to init")
 
-const lazy = kotlin.lazy_klfg04$;
+let kotlinjsext;
+try {
+    kotlinjsext = require("kotlinjsext");
+} catch (e) {
+    console.error(e)
+}
+if (kotlinjsext === undefined) throw new Error("kotlinjsext: Failed to init")
+
+
+const lazy = kotlinjsext.lazy
 if (lazy === undefined) throw new Error("kotlin: Missing lazy")
 
 const substringAfter = kotlin.text.substringAfter_j4ogox$;
