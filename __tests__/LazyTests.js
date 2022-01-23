@@ -1,18 +1,17 @@
-const {lazy} = require("kotlinjsext")
+const { lazy } = require("kotlinjsext");
 
-test('lazy is lazy', () => {
+test("lazy is lazy", () => {
+  let count = 0;
 
-    let count = 0;
+  let expected = "hello";
 
-    let expected = "hello";
+  const lazyProvider = lazy(() => {
+    count++;
+    return expected;
+  });
 
-    const lazyProvider = lazy(() => {
-        count++;
-        return expected;
-    })
-
-    for (let i = 0; i < 100; i++) {
-        expect(lazyProvider.value).toEqual(expected);
-    }
-    expect(count).toBe(1);
+  for (let i = 0; i < 100; i++) {
+    expect(lazyProvider.value).toEqual(expected);
+  }
+  expect(count).toBe(1);
 });

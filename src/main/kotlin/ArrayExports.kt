@@ -1,11 +1,14 @@
-@file:Suppress("NON_EXPORTABLE_TYPE")
+@file:Suppress(
+    "NON_EXPORTABLE_TYPE",
+    "NOTHING_TO_INLINE"
+)
 
 import kotlin.collections.distinct as distinct1
 import kotlin.collections.distinctBy as distinctBy1
 import kotlin.collections.toList as toList1
 
 @JsExport
-fun <T> Array<T>.sorted(): Array<T> {
+inline fun <T> Array<T>.sorted(): Array<T> {
     return toList1().sortedBy { it.asDynamic() }.toTypedArray()
 }
 

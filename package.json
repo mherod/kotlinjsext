@@ -10,7 +10,9 @@
     "prepare": "./gradlew build",
     "build": "./gradlew build",
     "test": "cd __tests__ && npm install && npm run test",
-    "bundle": "npx esbuild index.js --minify --bundle --global-name=Kotlin --outfile=build/Kotlin.js"
+    "prebundle": "./gradlew build --quiet",
+    "bundle": "npx esbuild index.js --minify --bundle --global-name=Kotlin --outfile=build/Kotlin.js",
+    "postbundle": "yes | npx prettier --write build/Kotlin.js"
   },
   "keywords": [],
   "author": "",
