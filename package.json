@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preinstall": "./gradlew build",
     "preinstall-built": "./gradlew build && npm install ./build/js/packages/kotlinjsext --no-save",
+    "preinstall": "./gradlew build",
+    "postinstall": "npm run test",
     "test": "cd __tests__ && npm install && npm run test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "kotlin": "^1.6.10"
+    "kotlin": "^1.5.31"
   }
 }

@@ -17,7 +17,6 @@ try {
 }
 if (kotlinjsext === undefined) throw new Error("kotlinjsext: Failed to init")
 
-
 const lazy = kotlinjsext.lazy
 if (lazy === undefined) throw new Error("kotlin: Missing lazy")
 
