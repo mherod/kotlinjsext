@@ -1,11 +1,11 @@
 // noinspection JSUnusedGlobalSymbols
 
-let {kotlin} = require("kotlin");
+// let {kotlin} = require("kotlin");
 
 let e = require("./build/js/packages/kotlinjsext/kotlin/kotlinjsext");
 
 String.prototype.replaceAll = function (oldValue, newValue, ignoreCase) {
-    return kotlin.text.replace_680rmw$(this, oldValue, newValue, ignoreCase)
+    return e.replaceAll(oldValue, newValue, ignoreCase)
 }
 
 /**
@@ -13,7 +13,7 @@ String.prototype.replaceAll = function (oldValue, newValue, ignoreCase) {
  * @return {kotlin.collections.ArrayList}
  */
 Array.prototype.toList = function () {
-    return kotlin.collections.toList_us0mfu$(this)
+    return e.toList(this)
 }
 
 /**
@@ -40,8 +40,7 @@ Array.prototype.distinctBy = function (keyBy) {
  * @return {Array}
  */
 Array.prototype.sorted = function () {
-    kotlin.collections.sort_9hsmwz$(this)
-    return this;
+    return e.sorted(this);
 }
 
 String.prototype.substringBefore = function (delimiter, missingDelimiterValue) {
@@ -65,7 +64,7 @@ String.prototype.contains = function (other, ignoreCase = false) {
 }
 
 module.exports = {
-    kotlin,
+    // kotlin,
     lazy: e.lazy,
     substringAfter: e.substringAfter,
     contains: e.contains,

@@ -1,4 +1,10 @@
 import kotlin.text.contains as textContains
+import kotlin.text.replace as textReplace
+
+@JsExport
+fun String.replaceAll(oldValue: String, newValue: String, ignoreCase: Boolean = false): String {
+    return textReplace(oldValue, newValue, ignoreCase)
+}
 
 @JsExport
 fun String.contains(other: String, ignoreCase: Boolean = false): Boolean {

@@ -4,15 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preinstall-built": "./gradlew build && npm install ./build/js/packages/kotlinjsext --no-save",
-    "preinstall": "./gradlew build",
-    "pretest": "./gradlew build test",
-    "test": "cd __tests__ && npm install && npm run test"
+    "preinstall-built": "./gradlew build --quiet && npm install ./build/js/packages/kotlinjsext --no-save",
+    "preinstall": "./gradlew build --quiet",
+    "pretest": "./gradlew build test --quiet",
+    "prepare": "./gradlew build",
+    "build": "./gradlew build",
+    "test": "cd __tests__ && npm install && npm run test",
+    "bundle": "npx esbuild index.js --minify --bundle --global-name=Kotlin --outfile=build/Kotlin.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "kotlin": "^1.5.31"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.13",
+    "prettier": "^2.5.1"
   }
 }
