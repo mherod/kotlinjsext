@@ -26,21 +26,9 @@ dependencies {
 
 kotlin {
     js(LEGACY) {
-//        binaries.executable()
         nodejs()
     }
 }
-
-val build = tasks.getByName("build")
-
-val copyBuildToRoot = task<Copy>("copyBuildToRoot") {
-    dependsOn(build)
-    from("$buildDir/js/packages/${rootProject.name}/kotlin/")
-    into("$projectDir")
-    include { it.file.isFile && it.name.startsWith(rootProject.name) }
-}
-
-build.finalizedBy(copyBuildToRoot)
 
 tasks.withType<KotlinCompile>() {
     kotlinOptions { applyKotlinCompilerOptions() }

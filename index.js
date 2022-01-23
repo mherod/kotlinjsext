@@ -2,12 +2,7 @@
 
 let {kotlin} = require("kotlin");
 
-let {
-    distinctBy,
-    lazy,
-    substringAfter,
-    contains
-} = require("./kotlinjsext");
+let e = require("./build/js/packages/kotlinjsext/kotlin/kotlinjsext");
 
 String.prototype.replaceAll = function (oldValue, newValue, ignoreCase) {
     return kotlin.text.replace_680rmw$(this, oldValue, newValue, ignoreCase)
@@ -26,7 +21,7 @@ Array.prototype.toList = function () {
  * @return {Array}
  */
 Array.prototype.distinct = function () {
-    return kotlin.collections.distinct_7wnvza$(this.toList()).toArray();
+    return e.distinctBy(this, a => a);
 };
 
 /**
@@ -37,7 +32,7 @@ Array.prototype.distinct = function () {
  * @return {Array.<T>}
  */
 Array.prototype.distinctBy = function (keyBy) {
-    return distinctBy(this, keyBy);
+    return e.distinctBy(this, keyBy);
 };
 
 /**
@@ -49,17 +44,29 @@ Array.prototype.sorted = function () {
     return this;
 }
 
+String.prototype.substringBefore = function (delimiter, missingDelimiterValue) {
+    return e.substringBefore(this, delimiter, missingDelimiterValue);
+}
+
+String.prototype.substringBeforeLast = function (delimiter, missingDelimiterValue) {
+    return e.substringBeforeLast(this, delimiter, missingDelimiterValue);
+}
+
 String.prototype.substringAfter = function (delimiter, missingDelimiterValue) {
-    return substringAfter(this, delimiter, missingDelimiterValue);
+    return e.substringAfter(this, delimiter, missingDelimiterValue);
+}
+
+String.prototype.substringAfterLast = function (delimiter, missingDelimiterValue) {
+    return e.substringAfterLast(this, delimiter, missingDelimiterValue);
 }
 
 String.prototype.contains = function (other, ignoreCase = false) {
-    return contains(this, other, ignoreCase);
+    return e.contains(this, other, ignoreCase);
 }
 
 module.exports = {
     kotlin,
-    lazy,
-    substringAfter,
-    contains,
+    lazy: e.lazy,
+    substringAfter: e.substringAfter,
+    contains: e.contains,
 }
