@@ -7,6 +7,7 @@
     "preinstall-built": "./gradlew build && npm install ./build/js/packages/kotlinjsext --no-save",
     "preinstall": "./gradlew build",
     "postinstall": "npm run test",
+    "pretest": "./gradlew build test",
     "test": "cd __tests__ && npm install && npm run test"
   },
   "keywords": [],
