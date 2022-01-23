@@ -63,9 +63,4 @@ String.prototype.contains = function (other, ignoreCase = false) {
     return e.contains(this, other, ignoreCase);
 }
 
-module.exports = {
-    // kotlin,
-    lazy: e.lazy,
-    substringAfter: e.substringAfter,
-    contains: e.contains,
-}
+module.exports = e;
