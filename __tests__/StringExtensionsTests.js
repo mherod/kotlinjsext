@@ -15,3 +15,19 @@ test("contains is false when doesn't contains", () => {
 
   expect(result).toBe(false);
 });
+
+test("substringAfter 1", () => {
+  const input = "hello world";
+
+  const result = input.substringAfter(" ");
+
+  expect(result).toEqual("world");
+});
+
+test("substringAfter 2", () => {
+  const input = "hello world";
+
+  const result = input.substringAfter("ll");
+
+  expect(result).toEqual("o world");
+});
