@@ -1,13 +1,11 @@
 {
   "name": "@mherod/kotlinjsext",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "repository": "https://github.com/mherod/kotlinjsext.git",
   "main": "index.js",
   "scripts": {
-    "prepublish": "./gradlew build",
-    "preinstall-built": "./gradlew build --quiet && npm install ./build/js/packages/kotlinjsext --no-save",
-    "prepare": "./gradlew build",
+    "prepack": "./gradlew build",
     "build": "./gradlew build",
     "test": "cd __tests__ && npm install && npm run test",
     "prebundle": "./gradlew build --quiet",
@@ -23,8 +21,5 @@
   "devDependencies": {
     "esbuild": "^0.14.13",
     "prettier": "^2.5.1"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   }
 }
