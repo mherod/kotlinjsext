@@ -11,14 +11,18 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("https://maven.pkg.jetbrains.space/public/p/ktor/eap")
+        name = "ktor-eap"
+    }
 }
 
 dependencies {
-    testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
+    implementation("io.ktor:ktor-client-core:2.0.0-eap-256")
+    implementation("io.ktor:ktor-client-json:2.0.0-eap-256")
+    implementation("io.ktor:ktor-client-serialization:2.0.0-eap-256")
+    testImplementation(kotlin("test"))
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
-    implementation("io.ktor:ktor-client-core:1.6.7")
-    implementation("io.ktor:ktor-client-json:1.6.7")
-    implementation("io.ktor:ktor-client-serialization:1.6.7")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
     implementation(npm("kotlin", "^1.5.31", generateExternals = false))
     implementation(npm("node-fetch", "^3.0.0", generateExternals = false))

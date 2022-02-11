@@ -23,4 +23,9 @@ fun <T, K> Array<T>.distinctBy(selector: (T) -> K): Array<T> {
 }
 
 @JsExport
+fun <T> Array<T>.shuffled(): Array<T> {
+    return toList1().shuffled().toTypedArray()
+}
+
+@JsExport
 fun <T> Array<T>.toList(): List<T> = toList1()

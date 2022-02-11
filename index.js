@@ -4,6 +4,7 @@
 
 let e = require("./build/js/packages/kotlinjsext/kotlin/kotlinjsext");
 
+// noinspection JSValidateTypes
 String.prototype.replaceAll = function (oldValue, newValue, ignoreCase) {
     return e.replaceAll(oldValue, newValue, ignoreCase);
 };
@@ -21,7 +22,8 @@ Array.prototype.toList = function () {
  * @return {Array}
  */
 Array.prototype.distinct = function () {
-    return e.distinctBy(this, (a) => a);
+    // noinspection JSCheckFunctionSignatures
+    return e.distinctBy(this, a => a);
 };
 
 /**
@@ -32,7 +34,19 @@ Array.prototype.distinct = function () {
  * @return {Array.<T>}
  */
 Array.prototype.distinctBy = function (keyBy) {
+    // noinspection JSCheckFunctionSignatures
     return e.distinctBy(this, keyBy);
+};
+
+/**
+ *
+ * @template T
+ * @this {Array.<T>}
+ * @return {Array.<T>}
+ */
+Array.prototype.shuffled = function () {
+    // noinspection JSCheckFunctionSignatures
+    return e.shuffled(this);
 };
 
 /**
