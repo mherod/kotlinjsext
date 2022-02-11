@@ -89,3 +89,5 @@ kotlinjsext.meta.js
 kotlinjsext.js.map
 kotlinjsext.js
 /.idea/git_toolbox_prj.xml
+.idea/codeStyles/codeStyleConfig.xml
+.idea/codeStyles/Project.xml
