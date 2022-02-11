@@ -1,12 +1,18 @@
 @file:Suppress("SuspiciousCollectionReassignment")
 
+import org.jetbrains.kotlin.config.KotlinCompilerVersion
 import org.jetbrains.kotlin.gradle.dsl.KotlinCommonOptions
 import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("js") version "1.5.31"
-    kotlin("plugin.serialization") version "1.5.31"
+    val requestedKotlinVersion = "1.6.10"
+    kotlin("js") version requestedKotlinVersion
+    kotlin("plugin.serialization") version requestedKotlinVersion
+}
+
+val kotlinVersion: String by lazy {
+    KotlinCompilerVersion.VERSION
 }
 
 repositories {
@@ -24,7 +30,7 @@ dependencies {
     testImplementation(kotlin("test"))
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
-    implementation(npm("kotlin", "^1.5.31", generateExternals = false))
+    implementation(npm("kotlin", "^$kotlinVersion", generateExternals = false))
     implementation(npm("node-fetch", "^3.0.0", generateExternals = false))
 }
 
@@ -43,7 +49,7 @@ tasks.withType<Kotlin2JsCompile> {
 }
 
 fun KotlinCommonOptions.applyKotlinCompilerOptions() {
-    languageVersion = "1.5"
+    languageVersion = kotlinVersion.substringBeforeLast('.')
     listOf(
         "-Xopt-in=kotlin.RequiresOptIn",
         "-Xopt-in=kotlin.js.ExperimentalJsExport",
