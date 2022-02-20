@@ -24,9 +24,9 @@ repositories {
 }
 
 dependencies {
-    implementation("io.ktor:ktor-client-core-jvm:2.0.0-eap-256")
-    implementation("io.ktor:ktor-client-json-jvm:2.0.0-eap-256")
-    implementation("io.ktor:ktor-client-serialization-jvm:2.0.0-eap-256")
+    implementation("io.ktor:ktor-client-core:2.0.0-eap-256")
+    implementation("io.ktor:ktor-client-json:2.0.0-eap-256")
+    implementation("io.ktor:ktor-client-serialization:2.0.0-eap-256")
     testImplementation(kotlin("test"))
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
