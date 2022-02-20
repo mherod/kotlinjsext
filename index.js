@@ -57,6 +57,26 @@ Array.prototype.sorted = function () {
     return e.sorted(this);
 };
 
+Object.prototype.let = function (block) {
+    return e.let(this, block)
+}
+
+Object.prototype.also = function (block) {
+    return e.also(this, block)
+}
+
+Array.prototype.let = function (block) {
+    return e.let(this, block)
+}
+
+Array.prototype.also = function (block) {
+    return e.apply(this, block)
+}
+
+String.prototype.let = function (block) {
+    return e.let(this, block)
+}
+
 String.prototype.substringBefore = function (delimiter, missingDelimiterValue) {
     return e.substringBefore(this, delimiter, missingDelimiterValue);
 };
