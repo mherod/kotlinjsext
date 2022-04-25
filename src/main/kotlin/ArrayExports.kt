@@ -8,7 +8,7 @@ import kotlin.collections.distinctBy as distinctBy1
 import kotlin.collections.toList as toList1
 
 @JsExport
-inline fun <T> Array<T>.sorted(): Array<T> {
+fun <T> Array<T>.sorted(): Array<T> {
     return toList1().sortedBy { it.asDynamic() }.toTypedArray()
 }
 

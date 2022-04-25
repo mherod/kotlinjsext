@@ -93,3 +93,4 @@ kotlinjsext.js
 .idea/codeStyles/Project.xml
 !/gradle/
 !/gradle/wrapper/gradle-wrapper.jar
+/.idea/inspectionProfiles/Project_Default.xml

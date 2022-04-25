@@ -14,18 +14,18 @@ class TLazy<T>(initializer: () -> T) {
 }
 
 @JsExport
-inline fun <T, R> T.let(block: (T) -> R): R {
+fun <T, R> T.let(block: (T) -> R): R {
     return block(this)
 }
 
 @JsExport
-inline fun <T> T.also(block: (T) -> Unit): T {
+fun <T> T.also(block: (T) -> Unit): T {
     block(this)
     return this
 }
 
 @JsExport
-inline fun <T> T.apply(block: T.() -> Unit): T {
+fun <T> T.apply(block: T.() -> Unit): T {
     block(this)
     return this
 }
