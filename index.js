@@ -99,4 +99,18 @@ String.prototype.contains = function (other, ignoreCase = false) {
     return e.contains(this, other, ignoreCase);
 };
 
+Object.prototype.toCamelCasedProperties = function () {
+    const me = this;
+    Object.keys(me).forEach(key => {
+        const newKey = key.replace(/-([a-z])/g, g => g[1].toUpperCase());
+        me[newKey] = me[key];
+        delete me[key];
+    })
+    return me;
+}
+
+Object.prototype.toUnderscoredProperties = function () {
+
+}
+
 module.exports = e;
