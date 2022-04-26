@@ -70,10 +70,10 @@ Array.prototype.sorted = function () {
 //     return e.let(this, block)
 // }
 
-Array.prototype.also = function (block) {
-    e.also(this, block)
-    return this
-}
+// Array.prototype.also = function (block) {
+//     e.also(this, block)
+//     return this
+// }
 
 // String.prototype.let = function (block) {
 //     return e.let(this, block)
@@ -102,15 +102,24 @@ String.prototype.contains = function (other, ignoreCase = false) {
 Object.prototype.toCamelCasedProperties = function () {
     const me = this;
     Object.keys(me).forEach(key => {
-        const newKey = key.replace(/-([a-z])/g, g => g[1].toUpperCase());
+        const newKey = key.replace(/[-_]([a-z])/g, g => g[1].toUpperCase());
         me[newKey] = me[key];
-        delete me[key];
+        delete me[key]
     })
     return me;
 }
 
 Object.prototype.toUnderscoredProperties = function () {
-
+    const me = this;
+    Object.keys(me).forEach(key => {
+        const newKey = key.replace(/([a-z][A-Z])/g, g => {
+            const [first, second] = g;
+            return `${first}_${second.toLowerCase()}`
+        });
+        me[newKey] = me[key];
+        delete me[key]
+    })
+    return me;
 }
 
 module.exports = e;

@@ -1,6 +1,6 @@
 {
   "name": "@mherod/kotlinjsext",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "repository": "https://github.com/mherod/kotlinjsext.git",
   "main": "index.js",
